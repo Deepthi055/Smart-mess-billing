@@ -1,35 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import LandingPage from "./components/LandingPage";
+import MenuPage from "./components/MenuPage";
+import StudentUsage from "./components/StudentUsage";
+import UsageReport from "./components/UsageReport";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState("landing");
+
+  // Force full screen size
+  const appStyle = {
+    width: "100vw",
+    height: "100vh",
+    overflowX: "hidden",
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div style={appStyle}>
+      {page === "landing" ? (
+        <LandingPage onStart={() => setPage("menu")} />
+      ) : page === "menu" ? (
+        <MenuPage
+          onUsageClick={() => setPage("usage")}
+          onReportClick={() => setPage("report")}
+        />
+      ) : page === "usage" ? (
+        <StudentUsage />
+      ) : (
+        <UsageReport />
+      )}
+
+      {/* Navigation buttons */}
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        {page !== "landing" && (
+          <button
+            onClick={() => setPage("landing")}
+            style={{
+              margin: "5px",
+              padding: "8px 12px",
+              backgroundColor: "#4CAF50",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            ⬅️ Home
+          </button>
+        )}
+
+        {page === "usage" && (
+          <button
+            onClick={() => setPage("report")}
+            style={{
+              margin: "5px",
+              padding: "8px 12px",
+              backgroundColor: "#2196F3",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            📊 View Report
+          </button>
+        )}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

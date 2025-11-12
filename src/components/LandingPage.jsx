@@ -1,41 +1,36 @@
-// import React from "react";
+import React from "react";
+import "./LandingPage.css";
 
-// const LandingPage = () => {
-//   return (
-//     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300 text-gray-800">
-//       <header className="text-center mb-10">
-//         <h1 className="text-5xl font-bold text-blue-700">Hospital Queue Management</h1>
-//         <p className="mt-4 text-lg text-gray-700">
-//           Streamline patient check-ins and reduce waiting times efficiently.
-//         </p>
-//       </header>
+function LandingPage({ onStart }) {
+  return (
+    <div className="landing-container">
+      <header className="header">
+        <h1>🍽️ Smart Mess Billing System</h1>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-//       <div className="flex gap-6">
-//         <a
-//           href="#patient"
-//           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition"
-//         >
-//           Patient Login
-//         </a>
-//         <a
-//           href="#doctor"
-//           className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700 transition"
-//         >
-//           Doctor Login
-//         </a>
-//         <a
-//           href="#admin"
-//           className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow hover:bg-gray-900 transition"
-//         >
-//           Admin Panel
-//         </a>
-//       </div>
+      <section className="hero">
+        <div className="overlay">
+          <div className="hero-content">
+            <h2>Welcome to the Future of Campus Dining</h2>
+            <p>
+              Track, manage, and enjoy your meals effortlessly with our smart
+              billing system designed for students.
+            </p>
+            <button onClick={onStart}>Get Started</button>
+          </div>
+        </div>
+      </section>
 
-//       <footer className="mt-12 text-sm text-gray-600">
-//         © 2025 Hospital Queue Management | All rights reserved
-//       </footer>
-//     </div>
-//   );
-// };
+      <footer className="footer">
+        <p>© 2025 Smart Mess Billing System | Designed by Harshitha and Deepthi💙</p>
+      </footer>
+    </div>
+  );
+}
 
-// export default LandingPage;
+export default LandingPage;

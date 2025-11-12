@@ -1,0 +1,111 @@
+.usage-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #74babe;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.usage-title {
+  text-align: center;
+  color: #4d2907;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.usage-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.input-field,
+.select-field {
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  width: 220px;
+  font-size: 16px;
+}
+
+.menu-section h3 {
+  color: #4b2a0b;
+  margin-top: 25px;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.item-card {
+  background: #103e7a;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(166, 59, 187, 0.1);
+  transition: 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.add-btn {
+  margin-top: 8px;
+  background-color: #078d2f;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #b39e8a;
+}
+
+.selected-section {
+  margin-top: 30px;
+  background: #0b4769;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #c291bf;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #0b79d0;
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
