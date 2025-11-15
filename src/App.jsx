@@ -1,72 +1,43 @@
-import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import LandingPage from "./components/LandingPage";
 import MenuPage from "./components/MenuPage";
-import StudentUsage from "./components/StudentUsage";
-import UsageReport from "./components/UsageReport";
+import StudentLogin from "./components/StudentLogin";
+import AdminLogin from "./components/AdminLogin";
 
-function App() {
-  const [page, setPage] = useState("landing");
+import UserDashboard from "./pages/UserDashboard";
+import Complaint from "./pages/Complaint";
+import Payment from "./pages/Payment";
+import MonthBillReport from "./pages/MonthBillReport";
 
-  // Force full screen size
-  const appStyle = {
-    width: "100vw",
-    height: "100vh",
-    overflowX: "hidden",
-  };
+import AdminDashboard from "./pages/AdminDashboard";
 
+export default function App() {
   return (
-    <div style={appStyle}>
-      {page === "landing" ? (
-        <LandingPage onStart={() => setPage("menu")} />
-      ) : page === "menu" ? (
-        <MenuPage
-          onUsageClick={() => setPage("usage")}
-          onReportClick={() => setPage("report")}
-        />
-      ) : page === "usage" ? (
-        <StudentUsage />
-      ) : (
-        <UsageReport />
-      )}
+    <Router>
+      <Routes>
 
-      {/* Navigation buttons */}
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        {page !== "landing" && (
-          <button
-            onClick={() => setPage("landing")}
-            style={{
-              margin: "5px",
-              padding: "8px 12px",
-              backgroundColor: "#4CAF50",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            ⬅️ Home
-          </button>
-        )}
+        {/* PUBLIC PAGES */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/student-login" element={<StudentLogin />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/menu" element={<MenuPage />} />
 
-        {page === "usage" && (
-          <button
-            onClick={() => setPage("report")}
-            style={{
-              margin: "5px",
-              padding: "8px 12px",
-              backgroundColor: "#2196F3",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            📊 View Report
-          </button>
-        )}
-      </div>
-    </div>
+        {/* USER DASHBOARD */}
+        <Route path="/user-dashboard" element={<UserDashboard />}>
+          <Route path="complaint" element={<Complaint />} />
+          <Route path="payment" element={<Payment />} />
+          <Route path="bill-report" element={<MonthBillReport />} />
+        </Route>
+
+        {/* ADMIN DASHBOARD */}
+        <Route path="/admin-dashboard" element={<AdminDashboard />}>
+          <Route path="manage-menu" element={<h2>Manage Menu Page</h2>} />
+          <Route path="take-order" element={<h2>Take Order Page</h2>} />
+          <Route path="generate-bill" element={<h2>Generate Bill Page</h2>} />
+        </Route>
+
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
