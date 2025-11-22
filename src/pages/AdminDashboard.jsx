@@ -11,6 +11,10 @@ export default function AdminDashboard() {
         <ul>
           <li><Link to="manage-menu">Manage Menu</Link></li>
           <li><Link to="manage-students">Manage Students</Link></li>
+          <li><Link to="manage-staff">Manage Staff</Link></li>
+          <li><Link to="usage-records">Usage Records</Link></li>
+          <li><Link to="generate-bills">Generate Bills</Link></li>
+          <li><Link to="payments">Payments</Link></li>
           <li><Link to="orders">Student Orders</Link></li>
           <li><Link to="billing">Billing</Link></li>
         </ul>

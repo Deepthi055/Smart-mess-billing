@@ -7,8 +7,8 @@
 
 .admin-sidebar {
   width: 240px;
-  background: #1e2a38;
-  color: white;
+  background: #0066ff; /* match landing navbar blue */
+  color: #ffffff;
   padding: 20px;
 }
 
@@ -36,10 +36,11 @@
 }
 
 .admin-sidebar ul li a:hover {
-  background: #34495e;
+  background: rgba(255,255,255,0.08);
 }
 
 .admin-content {
   flex: 1;
   padding: 30px;
+  background: #f0f4ff; /* light background to match landing */
 }

@@ -1,0 +1,102 @@
+/* container */
+.ms-container {
+  padding: 22px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f1f6ff 0%, #fff 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+/* header */
+.ms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.ms-header h2 { margin: 0; color: #123a8a; }
+
+/* card */
+.ms-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(13, 45, 78, 0.06);
+  overflow: auto;
+}
+
+/* table */
+.ms-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ms-table th, .ms-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #eef2ff;
+}
+.ms-table thead th {
+  color: #234a8f;
+  font-weight: 600;
+}
+
+/* empty */
+.ms-empty {
+  text-align: center;
+  padding: 26px;
+  color: #7b8aa3;
+}
+
+/* buttons */
+.ms-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: 600;
+}
+.ms-btn.primary { background: #0f62ff; color: white; }
+.ms-btn.edit { background: #06b6d4; color: white; }
+.ms-btn.delete { background: #ef4444; color: white; }
+.ms-btn.cancel { background: #94a3b8; color: white; }
+
+/* modal */
+.ms-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.ms-modal-card {
+  width: 420px;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ms-modal-card input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eefc;
+  outline: none;
+}
+
+/* modal actions */
+.ms-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* responsive */
+@media (max-width: 700px) {
+  .ms-modal-card { width: 95%; }
+  .ms-table th, .ms-table td { padding: 10px; font-size: 14px; }
+}
